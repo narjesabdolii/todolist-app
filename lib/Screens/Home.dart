@@ -7,14 +7,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: buildAppBar(),
-     backgroundColor: Colors.black12,
+     backgroundColor: Colors.grey[900],
 
     );
   }
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.black12,
+      backgroundColor: Colors.grey[900],
       leading: IconButton(
         icon: const Icon(Icons.menu),
         onPressed: () {},
