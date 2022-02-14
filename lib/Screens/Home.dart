@@ -5,6 +5,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return  Scaffold(
+      appBar: buildAppBar(),
+     backgroundColor: Colors.black12,
+
+    );
+  }
+  AppBar buildAppBar() {
+    return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.black12,
+      leading: IconButton(
+        icon: const Icon(Icons.menu),
+        onPressed: () {},
+      ),
+    );
   }
 }
