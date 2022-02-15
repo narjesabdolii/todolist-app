@@ -30,21 +30,27 @@ class HomeScreen extends StatelessWidget {
                     toDoController.todos[index].title,
                     style: (toDoController.todos[index].done) ? const TextStyle(
                       color: Colors.white,
-                        decoration: TextDecoration.lineThrough,
-                    ) : TextStyle(
-                        color: Theme.of(context).textTheme.bodyText1?.color
+                      fontFamily: 'Poppins-Regular'
+                    ) : const TextStyle(
+                        color: Colors.grey,
+                        fontFamily: 'Poppins-Regular'
                     ),
                   ),
                   onTap: (){
                     Get.to(AddScreen());
                   },
                   leading: Checkbox(
+                    checkColor: Colors.grey,
                     value: toDoController.todos[index].done,
                     onChanged: (value){
                       var changed = toDoController.todos[index];
                       changed.done = value!;
                       toDoController.todos[index] = changed;
                     },
+                    activeColor: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                   trailing: const Icon(Icons.chevron_right),
                 ),
@@ -62,7 +68,7 @@ class HomeScreen extends StatelessWidget {
           Row(
             children:  <Widget>[
               Container(
-                child: SizedBox(width: 90,),
+                child: const SizedBox(width: 90,),
               ),
               Container(
                   child : const Text('All',
