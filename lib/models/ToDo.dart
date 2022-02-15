@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ToDo{
-  String? text;
-  bool? done;
+  String text;
+  bool done;
   ToDo({
-  this.text,
-  this.done = false
+  required this.text,
+    required this.done,
        });
 }
