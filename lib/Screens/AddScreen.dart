@@ -33,10 +33,7 @@ class AddScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                     if(text !='' && title != '')
-                       {
-                         toDoController.todos.add(ToDo(title : titleController.text,text : textController.text, done: false));
-                       }
+                     toDoController.todos.add(ToDo(title : titleController.text,text : textController.text, done: false));
                      Get.back();
               },
               child: const Text('Add',
