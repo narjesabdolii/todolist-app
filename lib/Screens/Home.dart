@@ -27,10 +27,17 @@ class HomeScreen extends StatelessWidget {
             ()=>ListView.separated(
                 itemBuilder: (context,index) =>  ListTile(
                   title: Text(
-                    toDoController.todos[index].text,
-                    style: (toDoController.todos[index].done) ? const TextStyle() : const TextStyle(),
+                    toDoController.todos[index].title,
+                    style: (toDoController.todos[index].done) ? const TextStyle(
+                      color: Colors.white,
+                        decoration: TextDecoration.lineThrough,
+                    ) : TextStyle(
+                        color: Theme.of(context).textTheme.bodyText1?.color
+                    ),
                   ),
-                  onTap: (){},
+                  onTap: (){
+                    Get.to(AddScreen());
+                  },
                   leading: Checkbox(
                     value: toDoController.todos[index].done,
                     onChanged: (value){
