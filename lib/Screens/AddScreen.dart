@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/controllers/TodoController.dart';
+import 'package:get/get.dart';
 
 class AddScreen extends StatelessWidget {
-  const AddScreen({Key? key}) : super(key: key);
+  final ToDoController toDoController = Get.find();
 
+  AddScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    String text = '';
+    TextEditingController textEditingController = TextEditingController(text: text);
+    return Scaffold(
+      body: Container(
+
+      ),
+    );
   }
 }

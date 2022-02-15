@@ -15,6 +15,13 @@ class HomeScreen extends StatelessWidget {
     return  Scaffold(
       appBar: buildAppBar(),
      backgroundColor: Colors.grey[900],
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.pink,
+        child: const Icon(Icons.add),
+        onPressed: (){
+          Get.to(AddScreen());
+        },
+      ),
       body: Container(
         child: Obx(
             ()=>ListView.separated(
