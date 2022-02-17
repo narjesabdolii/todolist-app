@@ -16,9 +16,8 @@ class HomeScreen extends StatelessWidget {
 
     return Obx(() {
       final isDark = homeController.isDark.value;
-      final backgroundColor = isDark ? Colors.grey[200] : Colors.grey[900];
-      final foregroundColor = !isDark ? Colors.grey[200] : Colors.grey[900];
-
+      final backgroundColor = isDark ? Colors.white : Colors.grey[800];
+      final foregroundColor = !isDark ? Colors.white : Colors.grey[800];
       return Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -29,6 +28,8 @@ class HomeScreen extends StatelessWidget {
             'All Tasks',
             style: TextStyle(
               fontSize: 18,
+              fontFamily: 'Poppin'
+                  's-Regular'
             ),
           ),
         ),
@@ -47,7 +48,7 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     final ToDoController toDoController = Get.put(ToDoController());
 
-    return ListView.separated(
+    return Obx(() => ListView.separated(
       itemBuilder: (context, index) => ListTile(
         title: Text(
           toDoController.todos[index].title,
@@ -78,6 +79,6 @@ class _Body extends StatelessWidget {
       ),
       separatorBuilder: (_, __) => const Divider(),
       itemCount: toDoController.todos.length,
-    );
+    ));
   }
 }
