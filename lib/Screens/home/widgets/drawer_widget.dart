@@ -14,8 +14,12 @@ class DrawerWidget extends StatelessWidget {
           const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
+              image: DecorationImage(
+                image: AssetImage("lib/assets/images/List.jpg"),
+                fit: BoxFit.cover,
+              )
             ),
-            child: Text('Settings'),
+            child: Text(''),
           ),
           ListTile(
             title: const Text('Theme'),
