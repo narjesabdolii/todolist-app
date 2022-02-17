@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:todolist/controllers/TodoController.dart';
 import 'package:get/get.dart';
-
 import 'AddScreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,19 +19,25 @@ class HomeScreen extends StatelessWidget {
           children:  <Widget>[
             const DrawerHeader(
             decoration: BoxDecoration(
-             color: Colors.blue,
+             color: Colors.pink,
+              image: DecorationImage(
+                  image: AssetImage("lib/assets/images/List.jpg"),
+                  fit: BoxFit.cover,
+
+              )
             ),
-              child: Text('Settings'),
+              child:Text(''),
+              
             ),
             ListTile(
-              title: const Text('Theme'),
-              trailing: Get.isDarkMode ? Icon(Icons.wb_sunny) : Icon(Icons.nightlight_round),
-              onTap: ()
-              {
-                  Get.isDarkMode ?  Get.changeTheme(ThemeData.light()) : Get.changeTheme(ThemeData.dark());
-                  Get.back();
-              },
-            )
+                  title: const Text('Theme'),
+                  trailing: Get.isDarkMode ? const Icon(Icons.wb_sunny):const Icon(Icons.nightlight_round),
+                  onTap: ()
+                  {
+                    Get.isDarkMode ?  Get.changeTheme(ThemeData.light()) : Get.changeTheme(ThemeData.dark());
+                    Get.back();
+                  },
+                )
           ],
         ),
       ),
@@ -110,9 +115,6 @@ class HomeScreen extends StatelessWidget {
 
             ],
           ),
-      backgroundColor: Colors.grey[900],
-      centerTitle: true,
-
     );
   }
 }
