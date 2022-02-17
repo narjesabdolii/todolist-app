@@ -14,7 +14,28 @@ class HomeScreen extends StatelessWidget {
 
     return  Scaffold(
       appBar: buildAppBar(),
-     backgroundColor: Colors.grey[900],
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children:  <Widget>[
+            const DrawerHeader(
+            decoration: BoxDecoration(
+             color: Colors.blue,
+            ),
+              child: Text('Settings'),
+            ),
+            ListTile(
+              title: const Text('Theme'),
+              trailing: Get.isDarkMode ? Icon(Icons.wb_sunny) : Icon(Icons.nightlight_round),
+              onTap: ()
+              {
+                  Get.isDarkMode ?  Get.changeTheme(ThemeData.light()) : Get.changeTheme(ThemeData.dark());
+                  Get.back();
+              },
+            )
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.pink,
         child: const Icon(Icons.add),
@@ -29,10 +50,10 @@ class HomeScreen extends StatelessWidget {
                   title: Text(
                     toDoController.todos[index].title,
                     style: (toDoController.todos[index].done) ? const TextStyle(
-                      color: Colors.white,
+                      color: Colors.grey,
                       fontFamily: 'Poppins-Regular'
                     ) : const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontFamily: 'Poppins-Regular'
                     ),
                   ),
@@ -52,7 +73,9 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  trailing: const Icon(Icons.chevron_right),
+                  trailing: const Icon(Icons.chevron_right
+                  ,color: Colors.grey,
+                  ),
                 ),
               separatorBuilder:  (_, __) => const Divider(),
               itemCount: toDoController.todos.length,
@@ -89,10 +112,7 @@ class HomeScreen extends StatelessWidget {
           ),
       backgroundColor: Colors.grey[900],
       centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: () {},
-      ),
+
     );
   }
 }
