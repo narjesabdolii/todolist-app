@@ -35,6 +35,12 @@ class HomeScreen extends StatelessWidget {
                   's-Regular'
             ),
           ),
+          actions: const <Widget>[
+            CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage("lib/assets/images/1.png"),
+            )
+          ],
         ),
         drawer: const DrawerWidget(),
         floatingActionButton: const AddTaskFABWidget(),
