@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:todolist/controllers/home_controller.dart';
 
 import '../AddScreen.dart';
+import 'SearchBar.dart';
 import 'widgets/drawer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,13 +36,20 @@ class HomeScreen extends StatelessWidget {
                   's-Regular'
             ),
           ),
-          actions: const <Widget>[
+          actions:  <Widget>[
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                Get.to(const SearchBar());
+              },
+            ),
             CircleAvatar(
               radius: 20,
               backgroundImage: AssetImage("lib/assets/images/1.png"),
             )
           ],
         ),
+
         drawer: const DrawerWidget(),
         floatingActionButton: const AddTaskFABWidget(),
         body: const _Body()
