@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
           ),
           actions: const <Widget>[
             CircleAvatar(
-              radius: 25,
+              radius: 20,
               backgroundImage: AssetImage("lib/assets/images/1.png"),
             )
           ],
@@ -84,9 +84,13 @@ class _Body extends StatelessWidget {
                   ),
                 ),
 
-                trailing: const Icon(
-                  Icons.chevron_right,
-                  color: Colors.grey,
+                trailing: Wrap(
+                  spacing: 12, // space between two icons
+                  children:  <Widget>[
+                    Icon(Icons.alarm,
+                    color: (toDoController.todos[index].done) ? Colors.grey : null,),
+                    const Icon(Icons.chevron_right),
+                  ],
                 ),
               ),
               separatorBuilder: (_, __) => const Divider(),
