@@ -20,8 +20,8 @@ class HomeScreen extends StatelessWidget {
 
     return Obx(() {
       final isDark = homeController.isDark.value;
-      final backgroundColor = isDark ? Colors.white : Colors.grey[800];
-      final foregroundColor = !isDark ? Colors.white : Colors.grey[800];
+      final backgroundColor = isDark ? Colors.white : Colors.grey[900];
+      final foregroundColor = !isDark ? Colors.white : Colors.grey[900];
       return Scaffold(
         appBar: AppBar(
           elevation: 0,
